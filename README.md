@@ -1,8 +1,8 @@
 # React experimenting
+
 This is a basic repo for learning purposes. It consists of the following technologies for a purely client side webapp:
 
 - React
-- React Router
 - Alt
 - Webpack
 

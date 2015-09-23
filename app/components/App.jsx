@@ -1,38 +1,29 @@
 import React from 'react';
 import AltContainer from 'alt/AltContainer';
-import Chatbox from 'app/components/Chatbox';
-import ResponsePane from 'app/components/ResponsePane';
-import ChatStore from 'app/stores/ChatStore';
-import SurveyStore from 'app/stores/SurveyStore';
-import ChatActions from 'app/actions/ChatActions';
-
-export default class ChatContainer extends React.Component {
+import Store from 'app/stores/Store';
+import Actions from 'app/actions/Actions';
+import Child from 'app/components/Child'
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.submitSurvey = this.submitSurvey.bind(this);
   }
 
   componentDidMount() {
-    SurveyStore.fetchSurvey();
+    Store.fetchSurvey();
   }
 
   submitSurvey(chatLogID) {
-    SurveyStore.submitSurvey(chatLogID);
+    Store.submitSurvey(chatLogID);
   }
 
   render() {
     return(
       <AltContainer
-          actions={{ChatActions: ChatActions}}
-          stores={
-            {
-              ChatStore: ChatStore,
-              SurveyStore: SurveyStore
-            }
-          }
+          actions={{Actions: Actions}}
+          stores={{Store: Store}}
       >
-        <Chatbox/>
-        <ResponsePane submitSurvey={this.submitSurvey}/>
+        <Child/>
       </AltContainer>
     );
   }

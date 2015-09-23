@@ -33,15 +33,15 @@ export const Day1Survey = [{
   },
   drillDown: {
     type: DrillDownType.Negative,
-    content: 'Based on your previous data, you have been having trouble sleeping recently. Can you please tell us why?' 
+    content: 'Based on your previous data, you have been having trouble sleeping recently. Can you please tell us why?'
   },
   drillDownResponse: {
     type: ResponseType.MultipleSelection,
     choices: [
       'I could not breathe comfortably',
       'I had problems falling asleep',
-      'The room temperature was not right', 
-      'The room was too noisy', 
+      'The room temperature was not right',
+      'The room was too noisy',
       'The bed was uncomfortable',
       'I was not feeling well',
       'I am feeling very stressed in this period',
@@ -64,7 +64,7 @@ export const Day1Survey = [{
   },
   drillDown: {
     type: DrillDownType.Positive,
-    content: 'My supervisor(s) and I have **meaningful conversations on a regular basis.**' 
+    content: 'My supervisor(s) and I have **meaningful conversations on a regular basis.**'
   },
   drillDownResponse: {
     type: ResponseType.MultipleChoice,
@@ -99,7 +99,7 @@ export const Day1Survey = [{
   },
   response: {
     type: ResponseType.MultipleChoice,
-    choices: [  
+    choices: [
       'True',
       'False'
     ]
@@ -113,7 +113,7 @@ export const Day1Survey = [{
     choices: [
       'Yesterday, the amount of tasks I had to carry out did not allow me to care about health and safety.',
       'Yesterday, I was too fatigued to care about health and safety.'
-    ]      
+    ]
   }
 }, {
   id: 5,
@@ -127,7 +127,7 @@ export const Day1Survey = [{
     choices: [
       'True',
       'False'
-    ]  
+    ]
   },
   drillDown: {
     type: DrillDownType.None
@@ -144,7 +144,7 @@ export const Day1Survey = [{
     choices: [
       'True',
       'False'
-    ]  
+    ]
   },
   drillDown: {
     type: DrillDownType.None
@@ -161,7 +161,7 @@ export const Day1Survey = [{
     choices: [
       'True',
       'False'
-    ]  
+    ]
   },
   drillDown: {
     type: DrillDownType.None
@@ -177,7 +177,7 @@ export const Day1Survey = [{
   },
   drillDown: {
     type: DrillDownType.None,
-    content: ''  
+    content: ''
   }
 }, {
   id: 9,
@@ -190,7 +190,7 @@ export const Day1Survey = [{
   },
   drillDown: {
     type: DrillDownType.None,
-    content: ''    
+    content: ''
   }
 }];
 
@@ -262,7 +262,7 @@ export const Day2Survey = [{
   },
   response: {
     type: ResponseType.MultipleChoice,
-    choices: [  
+    choices: [
       'True',
       'False'
     ]
@@ -282,7 +282,7 @@ export const Day2Survey = [{
     choices: [
       'True',
       'False'
-    ]  
+    ]
   },
   drillDown: {
     type: DrillDownType.None
@@ -299,7 +299,7 @@ export const Day2Survey = [{
     choices: [
       'True',
       'False'
-    ]  
+    ]
   },
   drillDown: {
     type: DrillDownType.None
@@ -316,7 +316,7 @@ export const Day2Survey = [{
     choices: [
       'True',
       'False'
-    ]  
+    ]
   },
   drillDown: {
     type: DrillDownType.None
@@ -332,7 +332,7 @@ export const Day2Survey = [{
   },
   drillDown: {
     type: DrillDownType.None,
-    content: ''  
+    content: ''
   }
 }, {
   id: 9,
@@ -345,7 +345,7 @@ export const Day2Survey = [{
   },
   drillDown: {
     type: DrillDownType.None,
-    content: ''    
+    content: ''
   }
 }];
 
@@ -367,6 +367,6 @@ export const NewDay1Survey = [{
   },
   drillDown: {
     type: DrillDownType.None,
-    content: ''  
+    content: ''
   }
 }];

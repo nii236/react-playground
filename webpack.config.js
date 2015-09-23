@@ -26,6 +26,9 @@ var common = {
   },
   plugins: [
     new HtmlwebpackPlugin({
+      title: 'React App',
+      template: 'app/utils/HTMLWebpackTemplate.html',
+      inject: 'body'
     })
   ]
 };

@@ -3,15 +3,18 @@ import React from 'react';
 export default class Child extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    this.props.Actions.dummyAction();
+  handleClick(event) {
+    this.props.Actions.dummyAction()
   }
 
   render() {
     return(
-      <div>Yo</div>
+      <div className="jumbotron">
+        {this.props.Store.dummyState}
+      </div>
     );
   }
 }

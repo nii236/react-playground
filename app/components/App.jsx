@@ -2,19 +2,30 @@ import React from 'react';
 import AltContainer from 'alt/AltContainer';
 import Store from 'app/stores/Store';
 import Actions from 'app/actions/Actions';
-import Child from 'app/components/Child'
+import Child from 'app/components/Child';
+
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.submitSurvey = this.submitSurvey.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      text: "hi",
+      anotherThing: 5
+    }
   }
 
   componentDidMount() {
-    Store.fetchSurvey();
+    Actions.dummyAction("Action message");
+    Store.fetchAsync();
   }
 
-  submitSurvey(chatLogID) {
-    Store.submitSurvey(chatLogID);
+  componentDidUpdate() {
+    console.log("Component has updated");
+  }
+
+  handleClick() {
+    Actions.dummyAction();
   }
 
   render() {
@@ -24,6 +35,7 @@ export default class App extends React.Component {
           stores={{Store: Store}}
       >
         <Child/>
+        <button className="btn btn-primary" onClick={this.handleClick}>Push here</button>
       </AltContainer>
     );
   }

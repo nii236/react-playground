@@ -1,42 +1,37 @@
-import alt from '../utils/Alt';
-import Source from '../sources/Source';
-import Actions from '../actions/Actions';
+import alt from 'app/utils/Alt';
+import Source from 'app/sources/Source';
+import Actions from 'app/actions/Actions';
 
 class Store {
   constructor() {
     this.survey = [];
+    this.dummyState = {};
+    this.errorMessage = "";
     this.bindListeners({
-      handleFetchSurveyInProgress: Actions.FETCH_SURVEY_IN_PROGRESS,
-      handleFetchSurveySuccess: Actions.FETCH_SURVEY_SUCCESS,
-      handleFetchingSurveyFailed: Actions.FETCH_SURVEY_FAILED,
+      handleFetchAsyncInProgress: Actions.FETCH_ASYNC_IN_PROGRESS,
+      handleFetchAsyncSuccess: Actions.FETCH_ASYNC_SUCCESS,
+      handleFetchAsyncFailed: Actions.FETCH_ASYNC_FAILED,
       handleDummyAction: Actions.DUMMY_ACTION
     });
     this.registerAsync(Source);
   }
 
-  handleDummyAction(message) {
-    console.log("DUMMY_ACTION")
+  handleDummyAction() {
+    if (this.dummyState.derp == 'derp') {
+      this.dummyState.derp = 'not derp';
+    } else {
+      this.dummyState.derp = 'derp';
+    }
   }
 
-  handleFetchSurveyInProgress() {
-    this.survey = [];
+  handleFetchAsyncInProgress() {
   }
 
-  handleFetchSurveySuccess(survey) {
-    this.survey = survey;
-    this.errorMessage = null;
-    this.surveyIsReady = true;
-
+  handleFetchAsyncSuccess(survey) {
+    console.log(survey);
   }
 
-  handleFetchingSurveyFailed(errorMessage) {
-    this.errorMessage = errorMessage;
-  }
-
-  handleSubmitSurveyInProgress() {
-  }
-
-  handleSubmitSurveyFailed(errorMessage) {
+  handleFetchAsyncFailed(errorMessage) {
     this.errorMessage = errorMessage;
   }
 

@@ -17,7 +17,7 @@ var common = {
     root: [ path.resolve(__dirname)]
   },
   output: {
-    path: path.resolve(ROOT_PATH, '/build'),
+    path: path.resolve(ROOT_PATH, 'build'),
     filename: 'bundle.js'
   },
   module: {

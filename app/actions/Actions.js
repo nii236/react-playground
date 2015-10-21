@@ -1,20 +1,20 @@
-import alt from '../utils/Alt';
+import alt from 'app/utils/Alt';
 
 class Actions {
-  fetchSurveyInProgress() {
+  fetchAsyncInProgress() {
     this.dispatch();
   }
 
-  fetchSurveySuccess(survey) {
+  fetchAsyncSuccess(survey) {
     this.dispatch(survey);
   }
 
-  fetchSurveyFailed(errorMessage) {
+  fetchAsyncFailed(errorMessage) {
     this.dispatch(errorMessage);
   }
 
-  dummyAction(message) {
-    this.dispatch(message);
+  dummyAction() {
+    this.dispatch();
   }
 }
 

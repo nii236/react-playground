@@ -1,35 +1,34 @@
-import Actions from '../actions/Actions';
-import Logger from '../utils/Logger';
-import {Day1Survey as Survey} from '../constants/Survey';
+import Actions from 'app/actions/Actions';
+import Logger from 'app/utils/Logger';
+import {AsyncData} from 'app/constants/AsyncData';
 
-const resolveFetchSurveyPromiseTimeout = (resolve, reject) => {
+const resolveFetchAsyncPromiseTimeout = (resolve, reject) => {
   const fetchSuccess = true;
   if (fetchSuccess) {
-    resolve(Survey);
+    resolve(AsyncData);
   } else {
-    reject('Fetch survey failed');
+    reject('Fetch async data failed');
   }
 };
 
-const SurveySource = () => {
-
+const AsyncSource = () => {
   return {
-    fetchSurvey() {
+    fetchAsync() {
       return {
         remote() {
           return new Promise((resolve, reject) => {
-            setTimeout(() => {resolveFetchSurveyPromiseTimeout(resolve, reject);}, 500);
+            setTimeout(() => {resolveFetchAsyncPromiseTimeout(resolve, reject);}, 500);
           });
         },
         local() {
           return null;
         },
-        loading: Actions.fetchSurveyInProgress,
-        success: Actions.fetchSurveySuccess,
-        error: Actions.fetchSurveyFailed
+        loading: Actions.fetchAsyncInProgress,
+        success: Actions.fetchAsyncSuccess,
+        error: Actions.fetchAsyncFailed
       };
     }
   };
 };
 
-export default SurveySource;
+export default AsyncSource;
